@@ -34,3 +34,10 @@ echo "rand++ = $(( rand++ ))"
 echo "++rand = $(( ++rand ))"
 echo "rand-- = $(( rand-- ))"
 echo "--rand = $(( --rand ))"
+
+
+# Executing Python Commands
+num7=1.2
+num8=3.4
+num9=$(python -c "print ($num7 + $num8)")
+echo $num9
