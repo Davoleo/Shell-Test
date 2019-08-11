@@ -35,10 +35,3 @@ num2=8
 
 sum=$(getSum num1 num2)
 echo "The sum is: $sum"
-
-#PAUSE function.
-function pause() {
-   read -p "$*"
-}
-
-pause 'Press [Enter] key to continue...'
