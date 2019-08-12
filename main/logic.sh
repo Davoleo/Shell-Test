@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Reading input from the user
 # Conditionals
 # Logic Operators
@@ -54,11 +56,3 @@ if (( ((num > 0)) && ((num < 11)) ));
 then
     echo "$num is between 1 and 10"
 fi
-
-
-#PAUSE function.
-function pause() {
-   read -p "$*"
-}
-
-pause 'Press [Enter] key to continue...'

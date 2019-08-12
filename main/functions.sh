@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # print multiline information
 # cat prints a file or any string
 cat<< END
