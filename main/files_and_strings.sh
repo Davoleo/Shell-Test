@@ -53,6 +53,55 @@ if [ -e "$file1" ]; then
     echo "$file1 exists"
 fi
 
+#Regular Expressions
+read -p "Validate Date :  " date
+
+pat="^[0-9]{8}$"
+
+if [[ $date =~ $pat ]]; then 
+    echo "$date is valid"
+else
+    echo "$date is not valid"
+fi
+
+#Multiple user input
+read -p "Enter 2 Nums to Sum : " num1 num2
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+
+read -sp "Enter the secret code : " secret
+
+if [ "$secret" == "password" ]; then
+    echo "Enter"
+else
+    echo "Wrong Password"
+fi
+
+#Custom separated values user input values
+OIFS="$IFS"
+IFS=","
+read -p "Enter 2 numbers to add separated by a comma : " num1 num2
+
+num1=${num1//[[:blank:]]/}
+num2=${num2//[[:blank:]]/}
+sum=$((num1+num2))
+echo "$num1 + $num2 = $sum"
+
+IFS="$OIFS"
+
+#Parameter expansion
+name="Davoleo"
+echo "${name}'s"
+
+#string substitution
+samp_string="The dog climbed the tree"
+echo "${samp_string//dog/cat}"
+
+#if name was empty it would automatically have Davoleo as default value
+echo "I am ${name:=Davoleo}"
+
+
+
 #PAUSE function.
 function pause() {
    read -p "$*"
