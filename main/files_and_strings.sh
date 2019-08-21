@@ -99,12 +99,3 @@ echo "${samp_string//dog/cat}"
 
 #if name was empty it would automatically have Davoleo as default value
 echo "I am ${name:=Davoleo}"
-
-
-
-#PAUSE function.
-function pause() {
-   read -p "$*"
-}
-
-pause 'Press [Enter] key to continue...'
