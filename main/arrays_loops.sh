@@ -52,7 +52,7 @@ while read data1 data2 data3; do
 done < test.txt
 
 
-pause 'Press [Enter] key to continue...'
+pause '---------------------------'
 
 #For Loops
 #C Style
@@ -60,7 +60,7 @@ for (( i=0; i <= 10; i=i+1 )); do
     echo $i
 done
 
-pause 'Press [Enter] key to continue...'
+pause '---------------------------'
 
 for i in {A..Z}; do
     echo $i
@@ -68,3 +68,55 @@ done
 
 pause 'Press [Enter] key to continue...'
 
+#Arrays ----
+# They're one-dimensional (Take or leave)
+
+#Creates an array
+nums=(3.14 333 11 32 0.4)
+
+echo "PI: ${nums[0]}"
+
+#Changes a value at a given index
+nums[4]=0.5
+
+echo "GR: ${nums[4]}"
+
+#Appends an array
+nums+=(1 5)
+
+#Prints the items inside the array
+for i in ${nums[*]}; do
+    echo $i
+done
+
+pause '---------------------------'
+
+#Prints the array indexes
+for i in ${nums[@]}; do
+    echo $i
+done
+
+pause '---------------------------'
+
+echo "Array Length: ${#nums[@]}"
+echo "Index 3 Length: ${#nums[3]}"
+
+pause '---------------------------'
+
+#Sorts an array
+sorted_nums=($(for i in "${nums[@]}"; do
+    echo $i;
+done | sort))
+
+for i in ${sorted_nums[*]}; do
+    echo $i
+done
+
+pause '---------------------------'
+
+#Removes an array item
+unset 'sorted_nums[1]'
+#clears an array
+unset sorted_nums
+
+pause 'Press [Enter] key to continue...'
